@@ -17,8 +17,8 @@ public class Flock : MonoBehaviour
     [Header("Parameters")]
     public float pullFactor;
     public float separationFactor;
-    public float inertiaFactor;
     public float swarmFactor;
+    public float inertiaFactor;
     public float neighbourDistance;
     public float maxVelocity;
 
