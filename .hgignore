@@ -1,0 +1,5 @@
+syntax: glob
+Boids/.vs/Boids/v14/.suo
+Boids/Boids.CSharp.csproj
+Boids/Boids.sln
+Boids/Library/*
