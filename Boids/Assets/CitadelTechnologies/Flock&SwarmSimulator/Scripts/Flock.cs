@@ -108,44 +108,13 @@ public class Flock : MonoBehaviour
             separation = (m.instance.transform.position - localCentre) * separationFactor;
             Vector3 acceleration = alignment + pull + separation + swarmForce;
 
-            //if(followTarget != null)
-            //{
-            //    Vector3 targetCentrePosition = followTarget.position;
-
-            //    // Wander limits
-            //    if (m.instance.transform.position.x < targetCentrePosition.x - wanderDistance)
-            //    {
-            //        acceleration.x = CORRECTION_ACCELERATION;
-            //    }
-            //    else if (m.instance.transform.position.x > targetCentrePosition.x + wanderDistance)
-            //    {
-            //        acceleration.x = -CORRECTION_ACCELERATION;
-            //    }
-            //    if (m.instance.transform.position.y < targetCentrePosition.y - wanderDistance)
-            //    {
-            //        acceleration.y = CORRECTION_ACCELERATION;
-            //    }
-            //    else if (m.instance.transform.position.y > targetCentrePosition.y + wanderDistance)
-            //    {
-            //        acceleration.y = -CORRECTION_ACCELERATION;
-            //    }
-            //    if (m.instance.transform.position.z < targetCentrePosition.z - wanderDistance)
-            //    {
-            //        acceleration.z = CORRECTION_ACCELERATION;
-            //    }
-            //    else if (m.instance.transform.position.z > targetCentrePosition.z + wanderDistance)
-            //    {
-            //        acceleration.z = -CORRECTION_ACCELERATION;
-            //    }
-            //}
-
             m.velocity += acceleration * Time.deltaTime;
 
             m.velocity = Vector3.ClampMagnitude(m.velocity, maxVelocity);
 
             m.instance.transform.position += m.velocity * Time.deltaTime;
 
-            // turn the boid toward their velocity
+            // turn the member toward their velocity
             m.instance.transform.LookAt(m.instance.transform.position + Vector3.Normalize(m.velocity));
         }
     }
